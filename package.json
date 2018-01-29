@@ -1,0 +1,25 @@
+{
+  "name": "ES6Learn",
+  "version": "1.0.0",
+  "description": "Learn ES6 from jspang的二次学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/index.js -o dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angentle/ES6Learn.git"
+  },
+  "keywords": [],
+  "author": "angentle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angentle/ES6Learn/issues"
+  },
+  "homepage": "https://github.com/angentle/ES6Learn#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
