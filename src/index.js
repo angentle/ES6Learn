@@ -1,6 +1,8 @@
 // let a=1;
 // console.log(a);
-//
+//=============================
+// #####第2节：let\const 声明方式#####
+//=============================
 // var a ='angentle';
 // console.log(a);
 
@@ -44,6 +46,9 @@
 // var a ='安吉';
 // console.log(a)///无法编译 因为a重复定义了
 
+//=============================
+// #####第3节：变量的解构赋值#####
+//=============================
 // brfore 为变量赋值，我们只能直接指定值
 // let a=0;
 // let b=1;
@@ -78,11 +83,60 @@
 // ({foo} ={foo:'angentle'});//注意外面一层有圆括号包裹
 // console.log(foo); //angentle
 
-const [a,b,c,d,e,f] ='angentle';
-console.log(a,b,c,d,e,f);// a n g e n t l e 
-console.log(a); //a
-console.log(b); //n
-console.log(c); //g
-console.log(d); //e
-console.log(e); //n
-console.log(f); //t
+// const [a,b,c,d,e,f] ='angentle';
+// console.log(a,b,c,d,e,f);// a n g e n t
+// console.log(a); //a
+// console.log(b); //n
+// console.log(c); //g
+// console.log(d); //e
+// console.log(e); //n
+// console.log(f); //t
+
+//=============================
+// #####第4节：扩展运算符和rest运算符#####
+//=============================
+
+// function angentle(...arg){
+//     console.log(arg[0]);
+//     console.log(arg[1]);
+//     console.log(arg[2]);
+//     console.log(arg[3]);
+// }
+//
+// angentle(1,2,3);//1,2,3，undefined
+//可以传入多个值，并且就算方法中引用多了也不会报错
+
+// let arr1=['www','angentle','com'];
+// let arr2=arr1;
+// console.log(arr2);//www angentle com
+// arr2.push('安吉');
+// console.log(arr1);//www angentle com 安吉
+// 这是我们不想看到的 我们只想改变arr2 而arr1不随着arr2改变
+
+// 利用对象扩展运算符简单的解决这个问题
+// let arr1=['www','angentle','com'];
+// let arr2=[...arr1];
+// console.log(arr2);//www angentle com
+// arr2.push('安吉');
+// console.log(arr1);//www angentle com
+// console.log(arr2);//www angentle com 安吉
+//简单的扩展运算符就解决了这个问题。
+
+
+// rest运算符
+
+// function angentle(fitst,...arg){
+//     console.log(arg.length);
+// }
+// angentle(0,1,2,3,4,5,6,7);//7 (第一个值不算)
+
+//如何循环输出rest运算符
+// function angentle (first,...arg){
+//     for (let val of arg){
+//         console.log(val);//结果 循环遍历数组出来 1-7
+//     }
+// }
+// angentle(0,1,2,3,4,5,6,7);
+
+
+

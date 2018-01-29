@@ -1,10 +1,10 @@
-'use strict';
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+"use strict";
 
 // let a=1;
 // console.log(a);
-//
+//=============================
+// #####第2节：let\const 声明方式#####
+//=============================
 // var a ='angentle';
 // console.log(a);
 
@@ -48,6 +48,9 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 // var a ='安吉';
 // console.log(a)///无法编译 因为a重复定义了
 
+//=============================
+// #####第3节：变量的解构赋值#####
+//=============================
 // brfore 为变量赋值，我们只能直接指定值
 // let a=0;
 // let b=1;
@@ -82,19 +85,82 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 // ({foo} ={foo:'angentle'});//注意外面一层有圆括号包裹
 // console.log(foo); //angentle
 
-var _angentle = 'angentle',
-    _angentle2 = _slicedToArray(_angentle, 6),
-    a = _angentle2[0],
-    b = _angentle2[1],
-    c = _angentle2[2],
-    d = _angentle2[3],
-    e = _angentle2[4],
-    f = _angentle2[5];
+// const [a,b,c,d,e,f] ='angentle';
+// console.log(a,b,c,d,e,f);// a n g e n t
+// console.log(a); //a
+// console.log(b); //n
+// console.log(c); //g
+// console.log(d); //e
+// console.log(e); //n
+// console.log(f); //t
 
-console.log(a, b, c, d, e, f);
-console.log(a);
-console.log(b);
-console.log(c);
-console.log(d);
-console.log(e);
-console.log(f);
+//=============================
+// #####第4节：扩展运算符和rest运算符#####
+//=============================
+
+// function angentle(...arg){
+//     console.log(arg[0]);
+//     console.log(arg[1]);
+//     console.log(arg[2]);
+//     console.log(arg[3]);
+// }
+//
+// angentle(1,2,3);//1,2,3，undefined
+//可以传入多个值，并且就算方法中引用多了也不会报错
+
+// let arr1=['www','angentle','com'];
+// let arr2=arr1;
+// console.log(arr2);//www angentle com
+// arr2.push('安吉');
+// console.log(arr1);//www angentle com 安吉
+// 这是我们不想看到的 我们只想改变arr2 而arr1不随着arr2改变
+
+// 利用对象扩展运算符简单的解决这个问题
+// let arr1=['www','angentle','com'];
+// let arr2=[...arr1];
+// console.log(arr2);//www angentle com
+// arr2.push('安吉');
+// console.log(arr1);//www angentle com
+// console.log(arr2);//www angentle com 安吉
+//简单的扩展运算符就解决了这个问题。
+
+
+// rest运算符
+
+// function angentle(fitst,...arg){
+//     console.log(arg.length);
+// }
+// angentle(0,1,2,3,4,5,6,7);//7 (第一个值不算)
+
+//如何循环输出rest运算符
+function angentle(first) {
+    for (var _len = arguments.length, arg = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        arg[_key - 1] = arguments[_key];
+    }
+
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = arg[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var val = _step.value;
+
+            console.log(val); //结果 循环遍历数组出来
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+}
+angentle(0, 1, 2, 3, 4, 5, 6, 7);
