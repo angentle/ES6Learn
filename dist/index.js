@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // let a=1;
 // console.log(a);
@@ -133,34 +133,43 @@
 // angentle(0,1,2,3,4,5,6,7);//7 (第一个值不算)
 
 //如何循环输出rest运算符
-function angentle(first) {
-    for (var _len = arguments.length, arg = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        arg[_key - 1] = arguments[_key];
-    }
+// function angentle (first,...arg){
+//     for (let val of arg){
+//         console.log(val);//结果 循环遍历数组出来 1-7
+//     }
+// }
+// angentle(0,1,2,3,4,5,6,7);
 
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
+//=============================
+// #####第5节：字符串模版符#####
+//=============================
 
-    try {
-        for (var _iterator = arg[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var val = _step.value;
+// let angentle='安吉';
+// let blog = '很高兴学习这门课 by'+angentle+'这节课学习字符串模板';
+// document.write(blog);
 
-            console.log(val); //结果 循环遍历数组出来
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-}
-angentle(0, 1, 2, 3, 4, 5, 6, 7);
+// let angentle='安吉';
+// let blog =`<b>很高兴学习这门课 by</b>${angentle}。<br/>这节课学习字符串模板。`;
+// document.write(blog);
+
+//对运算的支持
+// let a=1;
+// let b=2;
+// let result =`${a+b}`;
+// document.write(result);
+
+// 查找是否存在
+
+// let angentle = '安吉';
+// let blog ='很高兴学习这门课 by安吉 这节课学习字符串模板';
+// document.write(blog.indexOf(angentle));//   11 安吉在该字符串中的索引值
+
+// let angentle = '安吉';
+// let blog = '很高兴学习这门课 by安吉 这节课学习字符串模板';
+// // document.write(blog.includes(angentle));//  true
+//
+// console.log(blog.startsWith(angentle));//false
+// console.log(blog.endsWith(angentle));//false
+
+
+document.write('angentle|'.repeat(3));
