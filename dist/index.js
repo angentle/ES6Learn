@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // let a=1;
 // console.log(a);
@@ -171,5 +171,55 @@
 // console.log(blog.startsWith(angentle));//false
 // console.log(blog.endsWith(angentle));//false
 
+// 复制字符串
+// document.write('angentle|'.repeat(3));
 
-document.write('angentle|'.repeat(3));
+//=============================
+// #####第6节：ES6数字操作#####
+//=============================
+
+// 二进制声明
+// let binary =0B010101;
+// console.log(binary); //21 ==1*2^0+1*2^2+1*2^4;
+
+//八进制声明
+// let b=0o666;
+// console.log(b);//438=6*8^0+6*8^1+6*8^2
+
+//数字判断和转换
+//数字验证Number.isFinite( xx )
+// let a =11/4;
+// console.log(Number.isFinite(a));//ture
+// console.log(Number.isFinite('angentle'));//false
+// console.log(Number.isFinite(NaN));//false
+// console.log(Number.isFinite(undefined));//false
+// console.log(Number.isFinite(null));//false
+
+// NaN验证
+// console.log(Number.isNaN(NaN));//ture
+
+// 判断是否为整数Number.isInteger(xx)
+// let a=123.1;
+// console.log(Number.isInteger(a)); //false
+
+// 整数转换Number.parseInt(xxx)和浮点型转换Number.parseFloat(xxx)
+// let a ='9.18';
+// console.log(Number.parseInt(a));//false
+// console.log(Number.parseFloat(a));//true
+
+// 整数的操作是有一个取值范围的，它的取值范围就是2的53次方
+// let a =Math.pow(2,53)-1;
+// console.log(a);//9007199254740991
+
+// 在我们计算时会经常超出这个值，所以我们要进行判断，
+// ES6提供了一个常数，叫做最大安全整数，以后就不需要我们计算了。
+
+// 最大安全整数
+console.log(Number.MAX_SAFE_INTEGER); //9007199254740991
+
+//最小安全整数
+console.log(Number.MIN_SAFE_INTEGER); //-9007199254740991
+
+//安全整数判断isSafeInteger()
+var a = Math.pow(2, 53);
+console.log(Number.isSafeInteger(a)); //true
