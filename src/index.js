@@ -213,11 +213,49 @@
 // ES6提供了一个常数，叫做最大安全整数，以后就不需要我们计算了。
 
 // 最大安全整数
-console.log(Number.MAX_SAFE_INTEGER);//9007199254740991
+// console.log(Number.MAX_SAFE_INTEGER);//9007199254740991
 
 //最小安全整数
-console.log(Number.MIN_SAFE_INTEGER);//-9007199254740991
+// console.log(Number.MIN_SAFE_INTEGER);//-9007199254740991
 
 //安全整数判断isSafeInteger()
-let a =Math.pow(2,53)-1;
-console.log(Number.isSafeInteger(a));//true
+// let a =Math.pow(2,53)-1;
+// console.log(Number.isSafeInteger(a));//true
+
+//=============================
+// #####第7节：ES6中新增的数组知识#####
+//=============================
+
+// JSON数组格式转换
+
+// JSON的数组格式如下
+// 跟普通的JSON对比是在最后多了一个length属性
+// let json ={
+//     '0':'angentle',
+//     '1':'安吉',
+//     '2':'wang',
+//     length:3
+// }
+//
+// let arr =Array.from(json);
+// console.log(arr);
+
+// Array.of()方法
+// 它负责把一堆文本或者变量 转换成 数组
+// let arr=Array.of(3,4,5,6);
+// console.log(arr); //  [3,4,5,6]
+
+// let arr = Array.of('angentle','安吉','wang');
+// console.log(arr);
+
+// find( )实例方法:
+//必须有一个已经存在的数组，然后使用的方法
+// 我们需要传入一个匿名函数，函数需要传入三个参数：
+// value：表示当前查找的值。
+// index：表示当前查找的数组索引。
+// arr：表示当前数组
+
+let arr =[1,2,3,4,5,6,7,8,9];
+console.log(arr.find(function(value,index,arr){
+    return value > 5;
+}))
