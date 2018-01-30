@@ -291,8 +291,87 @@
 // }
 
 // entries( )实例方法
-var arr = ['angentle', '安吉', 'wang'];
-var list = arr.entries();
-console.log(list.next().value);
-console.log(list.next().value);
-console.log(list.next().value);
+// entries()实例方式生成的是Iterator形式的数组，
+// 这种形式的好处就是可以让我们在需要时用next()手动跳转到下一个值。
+// let arr=['angentle','安吉','wang'];
+// let list = arr.entries();
+// console.log(list.next().value);//[0, "angentle"]
+// console.log(list.next().value);//[1, "安吉"]
+// console.log(list.next().value);//[2, "wang"]
+
+//=============================
+// #####第9节：ES6中的箭头函数和扩展#####
+//=============================
+
+// 先写一个ES5
+// function add(a,b){
+//     return a+b;
+// }
+// console.log(add(1,2));
+
+// 默认值
+// function add (a,b=1){
+//     return a+b;
+// }
+// console.log(add(1));
+
+// 主动抛出错误
+// function add(a) {
+//     var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+//
+//     if (a == 0) {
+//         throw new Error('this is error');
+//     }
+//     return a + b;
+// }
+// console.log(add(0));//this is error
+
+// 函数中的严谨模式
+// function add(a,b=1){
+//     'use strict'
+//     if(a==0){
+//         throw new Error('this is error ');
+//     }
+//     return a+b;
+// }
+//
+// console.log(add(1)); //Illegal 'use strict' directive in function with non-simple parameter list
+// 上边的代码如果运行的话，你会发现浏览器控制台报错，这是ES6中的一个坑
+// 错误的原因就是如果你使用了默认值，再使用严谨模式的话，就会有冲突，
+// 所以我们要取消默认值，就可以正常运行了。
+// function add(a, b) {
+//     'use strict';
+//
+//     if (a == 0) {
+//         throw new Error('this is error ');
+//     }
+//     return a + b;
+// }
+//
+// console.log(add(1, 2));//3
+
+// 获得需要传递的参数个数
+// 如果你在使用别人的框架时，不知道别人的函数需要传递几个参数怎么办？
+// ES6为我们提供了得到参数的方法(xxx.length).我们用上边的代码看一下需要传递的参数个数。
+// function add(a,b,c,d){
+//     'use strict'
+//     if(a == 0){
+//         throw new Error('this is error');
+//     }
+//     return a+b+c+d;
+// }
+// console.log(add.length);//4
+
+// 箭头函数
+// var add =(a,b=1) => a+b;
+// console.log(add(6));
+
+// 箭头函数{}的使用
+// 方法体内如果是两句话，那就需要在方法体外边加上{}括号
+var add = function add(a) {
+    var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+    console.log('angentle');
+    return a + b;
+};
+console.log(add(11));
