@@ -255,7 +255,44 @@
 // index：表示当前查找的数组索引。
 // arr：表示当前数组
 
-let arr =[1,2,3,4,5,6,7,8,9];
-console.log(arr.find(function(value,index,arr){
-    return value > 5;
-}))
+// let arr =[1,2,3,4,5,6,7,8,9];
+// console.log(arr.find(function(value,index,arr){
+//     return value > 5;
+// }))
+
+//=============================
+// #####第8节：ES6中新增的数组知识（2）#####
+//=============================
+
+// fill( )实例方法
+// let arr =[0,1,2,3,4,5,6,7,8,9];
+// arr.fill('angentle',2,5);
+// console.log(arr);//0,1,angentle,angentle,angentle,angentle,6,7,8,9];
+
+// 数组的遍历
+// for…of循环
+// let arr =['angentle','安吉','wang'];
+//  for (let item of arr){
+//      console.log(item);
+//  }
+
+// for…of数组索引
+// let arr =['angentle','安吉','wang'];
+// for(let index of arr.keys()){
+//     console.log(index);
+// }
+
+// 同时输出数组的内容和索引
+// let arr =['angentle','安吉','wang'];
+// for(let [index,val] of arr.entries()){
+//     console.log(index+':'+val)
+// }
+
+// entries( )实例方法
+// entries()实例方式生成的是Iterator形式的数组，
+// 这种形式的好处就是可以让我们在需要时用next()手动跳转到下一个值。
+// let arr=['angentle','安吉','wang'];
+// let list = arr.entries();
+// console.log(list.next().value);//[0, "angentle"]
+// console.log(list.next().value);//[1, "安吉"]
+// console.log(list.next().value);//[2, "wang"]
