@@ -368,10 +368,92 @@
 
 // 箭头函数{}的使用
 // 方法体内如果是两句话，那就需要在方法体外边加上{}括号
-var add = function add(a) {
-    var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+// var add =(a,b=1) => {
+//     console.log('angentle');
+//     return a+b;
+// }
+// console.log(add(11));
+// 箭头函数中不可加new，也就是说箭头函数不能当构造函数进行使用。
 
-    console.log('angentle');
-    return a + b;
-};
-console.log(add(11));
+//=============================
+// #####第10节：ES6中的函数和数组补漏#####
+//=============================
+
+// 对象的函数解构
+// 我们在前后端分离时，后端经常返回来JSON格式的数据，
+// 前端的美好愿望是直接把这个JSON格式数据当作参数，
+// 传递到函数内部进行处理。ES6就为我们提供了这样的解构赋值。
+// let json ={
+//     a:'angentle',
+//     b:'wang'
+// }
+// function fun({a,b='angentle'}){
+//     console.log(a,b);
+// }
+// fun(json);//angentle wang
+
+// 数组的函数解构
+// 函数能解构JSON，那解构我们的数组就更不在话下了，
+// 我们看下边的代码。我们声明一个数组，然后写一个方法，最后用…进行解构赋值。
+// let arr =['angentle','安吉','wang'];
+// function fun(a,b,c){
+//     console.log(a,b,c);
+// }
+// fun(...arr);//angentle 安吉 wang
+
+// in的用法
+// in是用来判断对象或者数组中是否存在某个值
+
+// 对象判断
+// let obj={
+//     a:'angentle',
+//     b:'安吉'
+// }
+// console.log('a' in obj);//true
+
+// 数组判断
+
+// 先看下ES5的弊端
+// let arr = [,,,,,];
+// console.log(arr.length);//5
+// 上边的代码输出了5，但是数组中其实全是空值，这就是一个坑啊。那用ES6的in就可以解决这个问题。
+// 注意：这里的0指的是数组下标位置是否为空。
+
+// let arr=[,,,,,];
+// console.log(0 in arr);//false
+//
+// let arr1 =['angentle','wang'];
+// console.log(0 in arr1);//true
+
+//数组的遍历方法
+
+// forEach forEach some 都有循环遍历的功能
+
+// 1.forEach
+// forEach循环的特点是会自动省略为空的数组元素，相当于直接给我们筛空了。当是有时候也会给我们帮倒忙。
+// let arr =['angentle','wang','安吉'];
+// arr.forEach((val,index)=>console.log(index,val));
+
+// 2.forEach
+// let arr =['angentle','wang','安吉'];
+// arr.filter(x=>console.log(x));
+
+// 3.some
+// let arr =['angentle','wang','安吉'];
+// arr.some(x=>console.log(x));
+
+// 4.map
+// map在这里起到一个替换的作用
+// let arr =['angentle','wang','安吉'];
+// console.log(arr.map(x=>'web'));//数组内全部替换成web
+
+// 数组转换字符串
+
+// join()方法
+// join()方法就是在数组元素中间，加了一些间隔，开发中很有用处。
+// let arr =['angentle','wang','安吉'];
+// console.log(arr.join('|'));//angentle|wang|安吉
+
+// toString()方法
+var arr = ['angentle', 'wang', '安吉'];
+console.log(arr.toString());
