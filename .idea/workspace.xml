@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c83df9dd-89de-4228-bc50-cd844e6c3681" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.js" afterPath="$PROJECT_DIR$/dist/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
@@ -33,10 +34,10 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="376" column="25" lean-forward="false" selection-start-line="376" selection-start-column="13" selection-end-line="376" selection-end-column="25" />
+            <state relative-caret-position="362">
+              <caret line="504" column="0" lean-forward="false" selection-start-line="504" selection-start-column="3" selection-end-line="509" selection-end-column="56" />
               <folding>
-                <marker date="1517304535000" expanded="true" signature="4841:4912" ph="..." />
+                <marker date="1517370812000" expanded="true" signature="4841:4912" ph="..." />
               </folding>
             </state>
           </provider>
@@ -65,11 +66,9 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="421" column="19" lean-forward="true" selection-start-line="421" selection-start-column="19" selection-end-line="421" selection-end-column="19" />
-              <folding>
-                <marker date="1517304491000" expanded="true" signature="9152:9155" ph="//..." />
-              </folding>
+            <state relative-caret-position="389">
+              <caret line="499" column="0" lean-forward="false" selection-start-line="499" selection-start-column="0" selection-end-line="499" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -201,12 +200,12 @@
       <option name="presentableId" value="Default" />
       <updated>1517210830915</updated>
       <workItem from="1517210832062" duration="442000" />
-      <workItem from="1517211625697" duration="14420000" />
+      <workItem from="1517211625697" duration="17486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14862000" />
+    <option name="totallyTimeSpent" value="17928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="787" y="25" width="1067" height="928" extended-state="0" />
@@ -256,7 +255,7 @@
         <state relative-caret-position="15">
           <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
           <folding>
-            <marker date="1517304535000" expanded="true" signature="4841:4912" ph="..." />
+            <marker date="1517370812000" expanded="true" signature="4841:4912" ph="..." />
           </folding>
         </state>
       </provider>
@@ -317,14 +316,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -333,22 +324,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="421" column="19" lean-forward="true" selection-start-line="421" selection-start-column="19" selection-end-line="421" selection-end-column="19" />
-          <folding>
-            <marker date="1517304491000" expanded="true" signature="9152:9155" ph="//..." />
-          </folding>
+        <state relative-caret-position="389">
+          <caret line="499" column="0" lean-forward="false" selection-start-line="499" selection-start-column="0" selection-end-line="499" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="376" column="25" lean-forward="false" selection-start-line="376" selection-start-column="13" selection-end-line="376" selection-end-column="25" />
+        <state relative-caret-position="362">
+          <caret line="504" column="0" lean-forward="false" selection-start-line="504" selection-start-column="3" selection-end-line="509" selection-end-column="56" />
           <folding>
-            <marker date="1517304535000" expanded="true" signature="4841:4912" ph="..." />
+            <marker date="1517370812000" expanded="true" signature="4841:4912" ph="..." />
           </folding>
         </state>
       </provider>

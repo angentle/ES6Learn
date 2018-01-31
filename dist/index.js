@@ -455,5 +455,58 @@
 // console.log(arr.join('|'));//angentle|wang|安吉
 
 // toString()方法
-var arr = ['angentle', 'wang', '安吉'];
-console.log(arr.toString());
+// 转换时只是是用逗号隔开了
+// let arr =['angentle','wang','安吉'];
+// console.log(arr.toString());//angentle,wang,安吉
+
+//=============================
+// #####第11节：ES6中对象#####
+//=============================
+
+// 对象赋值
+// let name='angentle';
+// let skill='web';
+// var obj={ name,skill};
+// console.log(obj); //Object {name: "jspang", skill: "web"}
+
+// 对象Key值构建
+// 有时候我们会在后台取出key值，而不是我们前台定义好的，这时候我们如何构建我们的key值那。
+// 比如我们在后台取了一个key值，然后可以用[ ] 的形式，进行对象的构建。
+// let key='skill';
+// var obj ={
+//     [key]:'web'
+// }
+// console.log(obj.skill);//web
+
+// //自定义对象方法
+// var obj={
+//     add :function(a,b){
+//         return a+b;
+//     }
+// }
+// console.log(obj.add(3,4));//7
+
+// Object.is(  ) 对象比较
+
+// 对象的比较方法,以前进行对象值的比较，经常使用===来判断，比如下面的代码：
+// var obj1={name:'angentle'};
+// var obj2={name:'angentle'};
+// console.log(obj1.name===obj2.name)//true
+// // 那ES6为我们提供了is方法进行对比。
+// console.log(Object.is(obj1.name,obj2.name));
+
+
+// 区分=== 和 is方法的区别是什么，看下面的代码输出结果。
+// console.log(+0 === -0);  //true
+// console.log(NaN === NaN ); //false
+// console.log(Object.is(+0,-0)); //false
+// console.log(Object.is(NaN,NaN)); //true
+// ===为同值相等，is()为严格相等
+
+// Object.assign(  )合并对象
+var a = { a: 'angentle' };
+var b = { b: 'anji' };
+var c = { c: 'web' };
+
+var d = Object.assign(a, b, c);
+console.log(d);
