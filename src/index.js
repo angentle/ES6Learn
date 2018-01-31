@@ -613,6 +613,7 @@
 //=============================
 // #####第14节：map数据结构#####
 //=============================
+
 // 我们知道的数据结构，已经有了json和set。
 // map是一种灵活，简单的适合一对一查找的数据结构。
 
@@ -676,3 +677,63 @@
 // 清除所有元素clear
 // map.clear()
 // console.log(map);
+
+//=============================
+// #####第15节：用Proxy进行预处理#####
+//=============================
+
+// 先来回顾一下定义对象的方法
+// var obj ={
+//     add:function(val){
+//         return val +10;
+//     },
+//     name:'I am angentle'
+// }
+// console.log(obj.add(100));//110
+// console.log(obj.name);//I am angentle
+
+// 声明Proxy
+// new Proxy({},{})
+// 第一个花括号就相当于我们方法的主体，后边的花括号就是Proxy代理处理区域，相当于我们写钩子函数的地方。
+// 现在把上边的obj对象改成我们的Proxy形式。
+
+// var pro = new Proxy({
+//     add : function (val) {
+//         return val + 10 ;
+//     },
+//     name:'I am angentle'
+// },{
+    // get属性
+    // target：得到的目标值
+    // key：目标的key值，相当于对象的属性
+    // property：这个不太常用，用法还在研究中，
+    // get:function(target,key,property){
+    //     console.log('come in get');//come in get
+    //     return target[key];
+    // },
+    // target:目标值。
+    // key：属性
+    // value：属性对应的值
+    // receiver：改变前的原始值。
+//     set:function(target,key,value,receive){
+//         console.log(`setting ${key} = ${value}`);
+//         return target[key] = value;
+//     }
+// });
+//
+// console.log(pro.name);//安吉
+// pro.name='安吉';
+// console.log(pro.name);//安吉
+
+// apply的使用 ??这部分知识点还不是很理解
+// let target = function(){
+//     return 'I am angentle';
+// };
+// var handler ={
+//     apply(target,ctx,args){
+//         console.log('do apply');//do apply
+//         return Reflect.apply(...arguments);
+//     }
+// }
+// var pro =new Proxy(target,handler);
+// console.log(pro())//I am angentle
