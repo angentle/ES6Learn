@@ -1,5 +1,13 @@
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 // let a=1;
 // console.log(a);
 //=============================
@@ -751,41 +759,127 @@
 // 坐下来吃饭。
 // 收拾桌子洗碗。
 
-var state = 1;
-function step1(resolve, reject) {
-    console.log('1.开始-洗菜做饭');
-    if (state == 1) {
-        resolve('洗菜做饭--完成');
-    } else {
-        reject('洗菜做饭--出错');
-    }
-}
+//留个疑问 如何设置每个操作停留时间？？？
+// let state = 1;
+// function step1(resolve,reject){
+//     console.log('1.开始-洗菜做饭');
+//     if (state == 1){
+//         resolve('洗菜做饭--完成');
+//     }else{
+//         reject('洗菜做饭--出错');
+//     }
+// }
+//
+// function step2(resolve,reject){
+//     console.log('2.开始-坐下来吃饭');
+//     if (state == 1){
+//         resolve('坐下来吃饭--完成');
+//     }else {
+//         reject('坐下来吃饭--出错');
+//     }
+// }
+//
+// function step3(resolve,reject){
+//     console.log('3.开始-收拾桌子洗完');
+//     if(state==1){
+//         resolve('收拾桌子洗完--完成');
+//     }else{
+//         reject('收拾桌子洗完--出错');
+//     }
+// }
+//
+// new Promise(step1)
+//     .then(function(val){
+//     console.log(val);
+//     return new Promise(step2);
+// }).then(function(val){
+//     console.log(val);
+//     return new Promise(step3);
+// }).then(function(val){
+//     console.log(val);
+//     return val;
+// })
 
-function step2(resolve, reject) {
-    console.log('2.开始-坐下来吃饭');
-    if (state == 1) {
-        resolve('坐下来吃饭--完成');
-    } else {
-        reject('坐下来吃饭--出错');
-    }
-}
+//=============================
+// #####第17节：class类的使用#####
+//=============================
+// 在ES5中经常使用方法或者对象去模拟类的使用，虽然可以实现功能，但是代码并不优雅，ES6为我们提供了类的使用。
 
-function step3(resolve, reject) {
-    console.log('3.开始-收拾桌子洗完');
-    if (state == 1) {
-        resolve('收拾桌子洗完--完成');
-    } else {
-        reject('收拾桌子洗完--出错');
-    }
-}
+// 类的声明
+// 先声明一个最简单的coder类，类里只有一个name方法，方法中打印出传递的参数。
+// class coder{
+//     name(val){
+//         console.log(val);
+//     }
+// }
+// // 类的使用
+// let angentle=new coder()
+// angentle.name('angentle');//angentle
 
-new Promise(step1).then(function (val) {
-    console.log(val);
-    return new Promise(step2);
-}).then(function (val) {
-    console.log(val);
-    return new Promise(step3);
-}).then(function (val) {
-    console.log(val);
-    return val;
-});
+// 类的多方法声明 注意 方法之间不需要逗号
+// class Coder{
+//     name(val){
+//         console.log(val+1);//angen
+//         return val;
+//     }
+//     skill(val){
+//         console.log(this.name('angentle')+':'+'Skill'+val);
+//     }
+// }
+//
+// let  angentle = new Coder;
+// angentle.name('angen');//angen
+// angentle.skill('web');//angentle
+//                       //angentle:Skillweb
+
+// 类的传参
+var Coder = function () {
+    _createClass(Coder, [{
+        key: 'name',
+        value: function name(val) {
+            console.log(val);
+            return val;
+        }
+    }, {
+        key: 'skill',
+        value: function skill(val) {
+            console.log(this.name('angentle') + ':' + 'skill' + val);
+        }
+    }]);
+
+    function Coder(a, b) {
+        _classCallCheck(this, Coder);
+
+        this.a = a;
+        this.b = b;
+    }
+
+    _createClass(Coder, [{
+        key: 'add',
+        value: function add() {
+            return this.a + this.b;
+        }
+    }]);
+
+    return Coder;
+}();
+
+var angentle = new Coder(1, 2);
+console.log(angentle.add()); //3
+
+// class的继承
+
+var htmler = function (_Coder) {
+    _inherits(htmler, _Coder);
+
+    function htmler() {
+        _classCallCheck(this, htmler);
+
+        return _possibleConstructorReturn(this, (htmler.__proto__ || Object.getPrototypeOf(htmler)).apply(this, arguments));
+    }
+
+    return htmler;
+}(Coder);
+
+var gen = new htmler();
+gen.name('angentle');

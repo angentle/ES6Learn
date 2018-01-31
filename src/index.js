@@ -789,3 +789,64 @@
 //     console.log(val);
 //     return val;
 // })
+
+//=============================
+// #####第17节：class类的使用#####
+//=============================
+// 在ES5中经常使用方法或者对象去模拟类的使用，虽然可以实现功能，但是代码并不优雅，ES6为我们提供了类的使用。
+
+// 类的声明
+// 先声明一个最简单的coder类，类里只有一个name方法，方法中打印出传递的参数。
+// class coder{
+//     name(val){
+//         console.log(val);
+//     }
+// }
+// // 类的使用
+// let angentle=new coder()
+// angentle.name('angentle');//angentle
+
+// 类的多方法声明 注意 方法之间不需要逗号
+// class Coder{
+//     name(val){
+//         console.log(val+1);//angen
+//         return val;
+//     }
+//     skill(val){
+//         console.log(this.name('angentle')+':'+'Skill'+val);
+//     }
+// }
+//
+// let  angentle = new Coder;
+// angentle.name('angen');//angen
+// angentle.skill('web');//angentle
+//                       //angentle:Skillweb
+
+// 类的传参
+// class Coder{
+//     name(val){
+//         console.log(val);
+//         return val;
+//     }
+//     skill(val){
+//         console.log(this.name('angentle')+':'+'skill'+val);
+//     }
+//
+//     constructor(a,b){
+//         this.a=a;
+//         this.b=b;
+//     }
+//     add(){
+//         return this.a+this.b;
+//     }
+// }
+// let angentle = new Coder(1,2);
+// console.log(angentle.add());//3
+//
+// // class的继承
+// class htmler extends Coder{
+//
+// }
+// let gen = new htmler;
+// gen.name('angentle');//angentle
+
