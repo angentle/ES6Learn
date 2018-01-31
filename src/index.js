@@ -737,3 +737,55 @@
 // }
 // var pro =new Proxy(target,handler);
 // console.log(pro())//I am angentle
+
+//=============================
+// #####第16节：promise对象的使用#####
+//=============================
+// 在使用ES5的时候，在多层嵌套回调时，写完的代码层次过多，很难进行维护和二次开发
+// ES6完美解决这个问题
+
+// 先说明个逻辑 在家吃饭的先后顺序
+// 洗菜做饭。
+// 坐下来吃饭。
+// 收拾桌子洗碗。
+
+//留个疑问 如何设置每个操作停留时间？？？
+// let state = 1;
+// function step1(resolve,reject){
+//     console.log('1.开始-洗菜做饭');
+//     if (state == 1){
+//         resolve('洗菜做饭--完成');
+//     }else{
+//         reject('洗菜做饭--出错');
+//     }
+// }
+//
+// function step2(resolve,reject){
+//     console.log('2.开始-坐下来吃饭');
+//     if (state == 1){
+//         resolve('坐下来吃饭--完成');
+//     }else {
+//         reject('坐下来吃饭--出错');
+//     }
+// }
+//
+// function step3(resolve,reject){
+//     console.log('3.开始-收拾桌子洗完');
+//     if(state==1){
+//         resolve('收拾桌子洗完--完成');
+//     }else{
+//         reject('收拾桌子洗完--出错');
+//     }
+// }
+//
+// new Promise(step1)
+//     .then(function(val){
+//     console.log(val);
+//     return new Promise(step2);
+// }).then(function(val){
+//     console.log(val);
+//     return new Promise(step3);
+// }).then(function(val){
+//     console.log(val);
+//     return val;
+// })
