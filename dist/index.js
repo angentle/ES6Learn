@@ -604,11 +604,76 @@
 // });
 
 // WeakSet的声明
-var weakObj = new WeakSet();
-var obj = { a: 'angentle', b: 'anji' };
-weakObj.add(obj);
-console.log(weakObj);
+// var weakObj = new WeakSet();
+// var obj = { a: 'angentle', b: 'anji' };
+// weakObj.add(obj);
+// console.log(weakObj);
 
 // 在实际开发中Set用的比较多，WeakSet用的并不多，
 // 但是他对传入值必须是对象作了很好的判断，我们灵活应用还是有一定的用处的。
 
+//=============================
+// #####第14节：map数据结构#####
+//=============================
+// 我们知道的数据结构，已经有了json和set。
+// map是一种灵活，简单的适合一对一查找的数据结构。
+
+// Json和map格式的对比
+// map的效率和灵活性更好
+
+// 先来写一个JSON
+
+// let json ={
+//     name:'angentle',
+//     skill:'web'
+// }
+// console.log(json.name);//angentle
+
+// 但是这种反应的速度要低于数组和map结构。
+// Map的灵活性要更好，
+// 你可以把它看成一种特殊的键值对，但你的key可以设置成数组，
+// 值也可以设置成字符串，让它不规律对应起来。
+// var json = {
+//     name: 'angentle',
+//     skill: 'web'
+// };
+// console.log(json.name);
+//
+// var map = new Map();
+// key可以设置成数组，值也可以设置成字符串，
+// map.set(json,'iam');
+// console.log(map);//Map(1){key:{name: "angentle", skill: "web"};value:"iam"}
+
+// 当然也可key字符串，value是对象
+// map.set('angentle', json);
+// console.log(map);//Map(1){key:"angentle";value:{name: "angentle", skill: "web"}}
+
+// map的增删查
+
+var json = {
+    name: 'angentle',
+    skill: 'web'
+};
+console.log(json.name); //angentle
+
+var map = new Map();
+map.set(json, 'iam'); //第一个参数是key 第二个参数为value
+
+
+console.log(map); //Map(1){key:{name: "angentle", skill: "web"};value:"iam"}
+
+console.log(map.get(json)); //iam
+
+// 删除delete
+// map.delete(json);
+// console.log(map);//Map(0) {}
+
+// size属性
+console.log(map.size); //1
+
+// 查找是否存在has
+
+console.log(map.has('angentle'));
+
+map.clear();
+console.log(map);
