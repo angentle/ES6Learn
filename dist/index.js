@@ -1,13 +1,13 @@
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _temp = require('temp.js');
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+//导入a
+console.log(_temp.a);
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+// import {sex,echo} from "./a.js"
+// console.log(sex)   // boy
+// echo(sex) // boy
 // let a=1;
 // console.log(a);
 //=============================
@@ -833,53 +833,41 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 //                       //angentle:Skillweb
 
 // 类的传参
-var Coder = function () {
-    _createClass(Coder, [{
-        key: 'name',
-        value: function name(val) {
-            console.log(val);
-            return val;
-        }
-    }, {
-        key: 'skill',
-        value: function skill(val) {
-            console.log(this.name('angentle') + ':' + 'skill' + val);
-        }
-    }]);
+// class Coder{
+//     name(val){
+//         console.log(val);
+//         return val;
+//     }
+//     skill(val){
+//         console.log(this.name('angentle')+':'+'skill'+val);
+//     }
+//
+//     constructor(a,b){
+//         this.a=a;
+//         this.b=b;
+//     }
+//     add(){
+//         return this.a+this.b;
+//     }
+// }
+// let angentle = new Coder(1,2);
+// console.log(angentle.add());//3
+//
+// // class的继承
+// class htmler extends Coder{
+//
+// }
+// let gen = new htmler;
+// gen.name('angentle');//angentle
 
-    function Coder(a, b) {
-        _classCallCheck(this, Coder);
+//=============================
+// #####第18节：模块化操作#####
+//=============================
+// 在ES5中我们要进行模块华操作需要引入第三方类库
+// 而ES6模块化操作主要包括两个方面
 
-        this.a = a;
-        this.b = b;
-    }
+// export:负责进行模块化 也是模块的输出
+// import: 负责把模块引 也是模块的引入操作
 
-    _createClass(Coder, [{
-        key: 'add',
-        value: function add() {
-            return this.a + this.b;
-        }
-    }]);
-
-    return Coder;
-}();
-
-var angentle = new Coder(1, 2);
-console.log(angentle.add()); //3
-
-// class的继承
-
-var htmler = function (_Coder) {
-    _inherits(htmler, _Coder);
-
-    function htmler() {
-        _classCallCheck(this, htmler);
-
-        return _possibleConstructorReturn(this, (htmler.__proto__ || Object.getPrototypeOf(htmler)).apply(this, arguments));
-    }
-
-    return htmler;
-}(Coder);
-
-var gen = new htmler();
-gen.name('angentle');
+// 我们新建一个temp.js文件
+// 然后可以在index.js中以import的形式引入。

@@ -850,3 +850,46 @@
 // let gen = new htmler;
 // gen.name('angentle');//angentle
 
+//=============================
+// #####第18节：模块化操作#####
+//=============================
+// 在ES5中我们要进行模块华操作需要引入第三方类库
+// 而ES6模块化操作主要包括两个方面
+
+// export:负责进行模块化 也是模块的输出
+// import: 负责把模块引 也是模块的引入操作
+
+// 我们新建一个temp.js文件
+// 然后可以在index.js中以import的形式引入。
+
+import {a} from 'temp.js' //导入a
+console.log(a);
+
+// import {sex,echo} from "./a.js"
+// console.log(sex)   // boy
+// echo(sex) // boy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
