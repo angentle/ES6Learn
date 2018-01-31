@@ -510,8 +510,9 @@
 // console.log(d);//{a: "angentle", b: "anji", c: "web"}
 
 //=============================
-// #####Symbol在对象中的作用#####
+// #####第12节：Symbol在对象中的作用#####
 //=============================
+
 // Symbol是全局标记的意思
 
 // 声明Symbol
@@ -555,3 +556,53 @@
 //     console.log(obj[item]);
 // }
 // console.log(obj);
+
+//=============================
+// #####第13节：Set和WeakSet数据结构#####
+//=============================
+
+// Set的声明
+// Set的数据结构是以数组的形式构建的
+// Set和Array 的区别是Set不允许内部有重复的值，如果有只显示一个，相当于去重。虽然Set很像数组，但是他不是数组。
+
+// let setArr = new Set(['angentle','anji','web','Alex']);
+// console.log(setArr);//Set(4) {"angentle", "anji", "web", "Alex"}
+
+// Set值的增删查
+
+// add
+// setArr.add('hard work');
+// console.log(setArr);//Set(5){"angentle", "anji", "web", "Alex", "hard work"}
+
+//delete
+// setArr.delete('anji');
+// console.log(setArr);//Set(4){"angentle", "web", "Alex", "hard work"}
+
+// console.log(setArr.has('angent'));//false
+// console.log(setArr.has('angentle'));//true
+
+// clear
+// setArr.clear();
+// console.log(setArr);//Set(0) {}
+
+// set的循环
+
+// for... of...循环
+// let setArr = new Set(['angentle','anji','web','ALex']);
+// for (let item of setArr){
+//     console.log(item);
+// }
+
+// size属性
+// console.log(setArr.size);//4
+
+// forEach循环
+// setArr.forEach(function (value) {
+//   return console.log(value);
+// });
+
+// WeakSet的声明
+let weakObj =new WeakSet();
+let obj ={a:'angentle',b:'anji'};
+weakObj.add(obj);
+console.log(weakObj);
