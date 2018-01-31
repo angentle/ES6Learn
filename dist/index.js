@@ -504,9 +504,55 @@
 // ===为同值相等，is()为严格相等
 
 // Object.assign(  )合并对象
-var a = { a: 'angentle' };
-var b = { b: 'anji' };
-var c = { c: 'web' };
+// var a={a:'angentle'};
+// var b={b:'anji'};
+// var c={c:'web'};
+//
+// let d=Object.assign(a,b,c);
+// console.log(d);//{a: "angentle", b: "anji", c: "web"}
 
-var d = Object.assign(a, b, c);
-console.log(d);
+//=============================
+// #####Symbol在对象中的作用#####
+//=============================
+// Symbol是全局标记的意思
+
+// 声明Symbol
+// var a = new String;
+// var b = new Number;
+// var c = new Boolean;
+// var d = new Array;
+// var e = new Object;
+// var f = Symbol();
+// console.log(typeof(d))
+
+// Symbol的打印
+// var g =Symbol('angentle');
+// console.log(g);//红色
+// console.log(g.toString()); /黑丝
+
+
+// Symbol在对象中的应用
+// var angentle =Symbol();
+// var obj = {
+//     [angentle] :'安吉'
+// }
+// console.log(obj[angentle]);//安吉
+// obj[angentle]='web';
+// console.log(obj[angentle]);//web
+
+// Symbol对象元素的保护作用
+
+var obj = { name: 'angentle', skill: 'web', age: 18 };
+for (var item in obj) {
+    console.log(obj[item]); //没有进行保护的写法
+    console.log(obj);
+}
+
+// 现在我不想别人知道我的年龄，这时候我就可以使用Symbol来进行循环保护。
+// var obj = {name:'angentle',skill:'web'};
+// let age = Symbol();
+// obj[age]=18;
+// for (let item in obj){
+//     console.log(obj[item]);
+// }
+// console.log(obj);
